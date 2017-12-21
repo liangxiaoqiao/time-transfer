@@ -25,7 +25,12 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+        <applicationService serviceImplementation="com.liangxiaoqiao.plugin.time.main.TimeTransferService"/>
+        <!-- Add your extensions here
+        <toolWindow id="TF Uploader"   secondary="true" icon="/general/add.png" anchor="right"
+                    factoryClass="">
+        </toolWindow>
+        -->
     </extensions>
 
     <actions>
