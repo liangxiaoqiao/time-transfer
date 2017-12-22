@@ -1,17 +1,26 @@
 <idea-plugin>
-    <id>com.your.company.unique.plugin.id</id>
-    <name>Plugin display name here</name>
-    <version>1.0</version>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <id>com.liangxiaoqiao.plugin.timetransfer</id>
+    <name>Time Transfer</name>
+    <version>1.1</version>
+    <vendor email="colter.liang@gmail.com" url="http://www.liangxiaoqiao.com">liangxiaoqiao</vendor>
 
     <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+        It is just a little tool used to change time to millisecond, or change millisecond to time.
+        The shortcut is Ctrl+Alt+Q.
     ]]></description>
 
     <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+     Version 1.0
+     The first version of this plugin.
+     It is just used to change time to millisecond, or change millisecond to time.
+     ---------------
+     Version 1.1
+     Add some date format pattern,but not support customized this version.(I will do it next version...)
+     Keep "" if you selected text contains that.
+     Trim the text you selected.
+     ---------------
+     next:
+     Will add user customized pattern...
     ]]>
     </change-notes>
 
@@ -27,7 +36,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.liangxiaoqiao.plugin.time.main.TimeTransferService"/>
         <!-- Add your extensions here
-        <toolWindow id="TF Uploader"   secondary="true" icon="/general/add.png" anchor="right"
+        <toolWindow id=""   secondary="true" icon="" anchor="right"
                     factoryClass="">
         </toolWindow>
         -->
