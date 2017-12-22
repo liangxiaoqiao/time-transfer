@@ -10,9 +10,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.project.Project;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 import static java.time.format.DateTimeFormatter.ofPattern;
@@ -127,11 +125,18 @@ public class TimeTransferAction extends AnAction {
             ttService.addFirst(ttService.usedPattern);
             ttService.addFirst(ttService.defaultPattern);
         }
+        //TODO 待优化的代码
         for (String pattern : ttService.patterns) {
             try {
-                LocalDateTime value = LocalDateTime.parse(old, ofPattern(pattern));
-                ttService.usedPattern = pattern;
-                return value;
+                LocalDateTime value;
+                value = parse1(old,ofPattern(pattern));
+                if(value == null){
+                    value = parse2(old,ofPattern(pattern));
+                }
+                if(value != null){
+                    ttService.usedPattern = pattern;
+                    return value;
+                }
             } catch (Exception e) {
                 //遍历所有预设的formatter
                 //出错继续直到最后
@@ -141,6 +146,22 @@ public class TimeTransferAction extends AnAction {
         ttService.removeFirst();
         ttService.removeFirst();
         return null;
+    }
+
+    private LocalDateTime parse1(String old, DateTimeFormatter df){
+        try{
+            return LocalDateTime.parse(old,df);
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    private LocalDateTime parse2(String old, DateTimeFormatter df){
+        try{
+            return LocalDateTime.of(LocalDate.parse(old,df), LocalTime.MIN);
+        }catch (Exception e){
+            return null;
+        }
     }
 
     private boolean isLong(String str) {
