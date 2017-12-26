@@ -1,26 +1,26 @@
 <idea-plugin>
     <id>com.liangxiaoqiao.plugin.timetransfer</id>
     <name>Time Transfer</name>
-    <version>1.1</version>
+    <version>1.2</version>
     <vendor email="colter.liang@gmail.com" url="http://www.liangxiaoqiao.com">liangxiaoqiao</vendor>
 
     <description><![CDATA[
-        It is just a little tool used to change time to millisecond, or change millisecond to time.
+        It is just a little tool used to change time to millisecond, or change millisecond to time.<br/>
         The shortcut is Ctrl+Alt+Q.
     ]]></description>
 
     <change-notes><![CDATA[
-     Version 1.0
-     The first version of this plugin.
-     It is just used to change time to millisecond, or change millisecond to time.
-     ---------------
-     Version 1.1
-     Add some date format pattern,but not support customized this version.(I will do it next version...)
-     Keep "" if you selected text contains that.
-     Trim the text you selected.
-     ---------------
-     next:
-     Will add user customized pattern...
+     Version 1.0<br/>
+     The first version of this plugin.<br/>
+     It is just used to change time to millisecond, or change millisecond to time.<br/>
+     ---------------<br/>
+     Version 1.1<br/>
+     Add some date format pattern,but not support customized this version.(I will do it next version...)<br/>
+     Keep "" if you selected text contains that.<br/>
+     Trim the text you selected.<br/>
+     ---------------<br/>
+     next:<br/>
+     Will add user customized pattern...<br/>
     ]]>
     </change-notes>
 
